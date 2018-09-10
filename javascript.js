@@ -1,9 +1,9 @@
 //Declare movies
-var movies = ['Avator', 'Goodfellas', 'Godfather', 'Gladiator', 'Titanic', 'Jaws', 'Alien', 'Scream', 'Rocky', 'Scarface', '300'];
+var movies = ['Avator', 'Goodfellas', 'Godfather', 'Gladiator', 'Titanic', 'Jaws', 'Alien', 'Scream', 'Rocky', 'Scarface', '300']
 
 // movie buttons giphy function giphy buttons movie function
 function giphyButtons(){
-    $('#giphyButton').empty();
+    $('#giphyButton').empty()
     for (var i = 0; i < movies.length; i++){
         var buttons = $('<button>')
         buttons.attr('data-name', movies[i])
@@ -13,6 +13,9 @@ function giphyButtons(){
         buttons.css('margin-bottom', '5px')
         $('#giphyButton').prepend(buttons)
     }
+    $('#reset').on('click', function(){
+        location.reload()
+    })
 }
 giphyButtons()
 
@@ -20,7 +23,7 @@ giphyButtons()
 function giphyDisplay (){
 
     $('button').on('click', function() {
-        $('#giphyOutput').empty();
+        $('#giphyOutput').empty()
         var movies = $(this).attr('data-name')
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + movies + "&api_key=cs4PVT1eJv2z6QFcoC65bvXM28sSVZqA&limit=10"
 
@@ -49,15 +52,22 @@ function giphyDisplay (){
             }
         });
     });
-    $('#reset').on('click', function(){
-        location.reload()
+    $(document).on('click', '#images', function(){
+        var state = $(this).attr('data-state')
+        if ( state == 'still'){
+            $(this).attr('src', $(this).data('move'))
+            $(this).attr('data-state', 'move')
+        } else {
+            $(this).attr('src', $(this).data('still'))
+            $(this).attr('data-state', 'still')
+        }
     });
-
 }
 giphyDisplay()
 
 // "netflix has every movie i don't want to watch" function
 function addMovie () {
+
     $('#addMovie').on('click', function(event) {
         event.preventDefault()
         var movie = $('#movie-add').val().trim()
@@ -71,16 +81,3 @@ function addMovie () {
     });
 }
 addMovie()
-
-// "ever dance with the devil under a pale moon light?"" function
-$(document).on('click', '#images', function(){
-    var state = $(this).attr('data-state')
-    if ( state == 'still'){
-        $(this).attr('src', $(this).data('move'))
-        $(this).attr('data-state', 'move')
-    } else {
-        $(this).attr('src', $(this).data('still'))
-        $(this).attr('data-state', 'still')
-    }
-});
-
