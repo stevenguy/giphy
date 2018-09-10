@@ -22,7 +22,7 @@ function giphyDisplay (){
     $('button').on('click', function() {
         $('#giphyOutput').empty();
         var movies = $(this).attr('data-name')
-        var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + movies + '&api_key=cs4PVT1eJv2z6QFcoC65bvXM28sSVZqA&limit=10';
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + movies + "&api_key=cs4PVT1eJv2z6QFcoC65bvXM28sSVZqA&limit=10";
 
         $.ajax({
         url: queryURL,
