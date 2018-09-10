@@ -22,7 +22,7 @@ function giphyDisplay (){
     $('button').on('click', function() {
         $('#giphyOutput').empty();
         var movies = $(this).attr('data-name')
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + movies + "&api_key=cs4PVT1eJv2z6QFcoC65bvXM28sSVZqA&limit=10";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + movies + "&api_key=cs4PVT1eJv2z6QFcoC65bvXM28sSVZqA&limit=10"
 
         $.ajax({
         url: queryURL,
@@ -50,7 +50,7 @@ function giphyDisplay (){
         });
     });
     $('#reset').on('click', function(){
-        location.reload();
+        location.reload()
     });
 
 }
@@ -59,14 +59,14 @@ giphyDisplay()
 // "netflix has every movie i don't want to watch" function
 function addMovie () {
     $('#addMovie').on('click', function(event) {
-        event.preventDefault();
-        var movie = $('#movie-add').val().trim();
+        event.preventDefault()
+        var movie = $('#movie-add').val().trim()
         if (movie == '') {
             $('#empty-movie').text('Please add movie')
             return false
         }
-        movies.push(movie);
-        giphyButtons();
+        movies.push(movie)
+        giphyButtons()
         giphyDisplay()
     });
 }
@@ -74,13 +74,13 @@ addMovie()
 
 // "ever dance with the devil under a pale moon light?"" function
 $(document).on('click', '#images', function(){
-    var state = $(this).attr('data-state');
+    var state = $(this).attr('data-state')
     if ( state == 'still'){
-        $(this).attr('src', $(this).data('move'));
-        $(this).attr('data-state', 'move');
-    }else{
-        $(this).attr('src', $(this).data('still'));
-        $(this).attr('data-state', 'still');
+        $(this).attr('src', $(this).data('move'))
+        $(this).attr('data-state', 'move')
+    } else {
+        $(this).attr('src', $(this).data('still'))
+        $(this).attr('data-state', 'still')
     }
 });
 
