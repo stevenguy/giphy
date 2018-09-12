@@ -1,5 +1,5 @@
 //Declare movies
-var movies = ['Avator', 'Goodfellas', 'Godfather', 'Gladiator', 'Titanic', 'Jaws', 'Alien', 'Scream', 'Rocky', 'Scarface', '300']
+var movies = ['Avator', 'Goodfellas', 'Godfather', 'Gladiator', 'Titanic', 'Jaws', 'Alien', 'Scream', 'Rocky', 'Scarface', '300', 'Sublime', 'Narcos', 'Supergirl', 'The Flash', 'Avengers', 'Rey', 'Obie Won', 'Legolas', 'Harry Potter']
 
 // movie buttons giphy function giphy buttons movie function
 function giphyButtons(){
