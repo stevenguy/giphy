@@ -19,7 +19,7 @@ function giphyButtons(){
 }
 giphyButtons()
 
-// regulators mount up
+// "regulators mount up" function
 function giphyDisplay (){
 
     $('button').on('click', function() {
